@@ -1,0 +1,11 @@
+# Project exclude paths
+/Eureka_Service_18000/target/
+/Eureka_Service_18001/target/
+/Eureka_Service_18002/target/
+/Service_Consumer_16000/target/
+/Service_Provider_11000/target/
+/Service_Provider_11001/target/
+# Project exclude paths
+/Config_Service_15000/target/
+/Config_Service_15001/target/
+/Gateway_Service_12000/target/

@@ -1,0 +1,37 @@
+server:
+  port: 15000
+spring:
+  application:
+    name: "config-service"
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/fengqingdzy/config-test.git
+          username: 19174633058
+          password: dai040618
+          default-label: master
+  #  rabbitmq
+  rabbitmq:
+    stream:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+
+#暴露busrefresh节点，通过此节点刷新配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: busrefresh
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: "${spring.cloud.client.ip-address}:${server.port}"
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+  client:
+    service-url:
+      defaultZone: "http://localhost:18000/eureka/,http://eurekaServer18001:18001/eureka/,http://eurekaServer18002:18002/eureka/"
